@@ -1,0 +1,402 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Add your custom animations and styles here */
+.animate-blob {
+  animation: blob 7s infinite ease-in-out;
+}
+
+/* In your global.css */
+@keyframes blob {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+}
+
+.animate-blob {
+  animation: blob 7s ease-in-out infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+.animate-typing {
+  animation: typing 3.5s steps(40, end);
+}
+/* Add to your index.css */
+@font-face {
+  font-family: 'Brush Script MT';
+  src: local('Brush Script MT'), local('BrushScriptMT');
+  font-style: cursive;
+}
+
+.font-signature {
+  font-family: 'Brush Script MT', cursive;
+}
+/* Skill bar animations */
+.skill-item {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.skill-item.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Portfolio Card Styles */
+.portfolio-card {
+  perspective: 1500px;
+}
+
+.card-inner {
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.card-face {
+  backface-visibility: hidden;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 30px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.card-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  transition: all 0.5s ease;
+  position: relative;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-btn {
+  padding: 10px 24px;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Smooth transitions for footer links */
+.footer-link {
+  transition: all 0.3s ease;
+}
+
+.footer-link:hover {
+  transform: translateX(5px);
+}
+
+/* Platform card hover effects */
+.platform-card {
+  transition: all 0.3s ease, transform 0.2s ease;
+}
+
+.platform-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Add bounce animation */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.back-to-top:hover {
+  animation: bounce 0.5s ease infinite;
+}
+
+/* Resume content styling */
+#resume-content {
+  scrollbar-width: thin;
+  scrollbar-color: #9333EA #e0f2fe;
+}
+
+#resume-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+#resume-content::-webkit-scrollbar-track {
+  background: #e0f2fe;
+}
+
+#resume-content::-webkit-scrollbar-thumb {
+  background-color: #9333EA;
+  border-radius: 4px;
+}
+
+.dark #resume-content::-webkit-scrollbar-track {
+  background: #1e293b;
+}
+
+.dark #resume-content::-webkit-scrollbar-thumb {
+  background-color: #5eead4;
+}
+
+/* Left column styles */
+.left-column {
+  background-color: #f8fafc;
+}
+
+.dark .left-column {
+  background-color: #1e293b !important;
+}
+
+.name-header {
+  color: #115e59;
+}
+
+.dark .name-header {
+  color: #5eead4 !important;
+}
+
+.section-header {
+  color: #0f766e;
+  border-bottom-color: #0f766e;
+}
+
+.dark .section-header {
+  color: #2dd4bf !important;
+  border-bottom-color: #2dd4bf !important;
+}
+
+.profile-photo {
+  border-color: #0f766e;
+}
+
+.dark .profile-photo {
+  border-color: #2dd4bf !important;
+}
+
+/* Add to your global CSS file for HireMe page */
+.hero-bg {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.dark .hero-bg {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+}
+
+.btn-primary {
+  background: linear-gradient(to right, #4776e6, #8e54e9);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.dark .btn-primary {
+  box-shadow: 0 4px 15px rgba(71, 118, 230, 0.3);
+}
+
+
+// Projects page styles
+/* Project card animations */
+.project-card {
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.1) 0%, rgba(139, 92, 246, 0.05) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.project-card:hover::before {
+  opacity: 1;
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.05);
+}
+
+.project-image {
+  transition: transform 0.5s ease;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-image::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.1) 0%, transparent 100%);
+}
+
+.project-badge {
+  transition: all 0.3s ease;
+}
+
+.project-card:hover .project-badge {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Filter buttons */
+.filter-btn {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.filter-btn::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #7C3AED;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.filter-btn:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.filter-btn.active::after {
+  transform: scaleX(1);
+}
+
+/* Section headers */
+.section-header {
+  position: relative;
+  display: inline-block;
+}
+
+.section-header::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 50%;
+  height: 3px;
+  background: linear-gradient(to right, #7C3AED, #4F46E5);
+  border-radius: 3px;
+}
+
+/* Grid layout */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+@media (min-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  }
+}
+
+/* Hero gradient */
+.hero-gradient {
+  background: linear-gradient(135deg, #7C3AED 0%, #4F46E5 100%);
+}
+
+.dark .hero-gradient {
+  background: linear-gradient(135deg, #6D28D9 0%, #4338CA 100%);
+}
+
+/* Project category indicator */
+.category-indicator {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 4px 8px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  z-index: 10;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+
+/*projects page css*/
+.scroll-snap-x-mandatory {
+  scroll-snap-type: x mandatory;
+}
+.scroll-snap-align-start {
+  scroll-snap-align: start;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
