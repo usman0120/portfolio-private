@@ -4,6 +4,7 @@ import { FaArrowDown, FaEye } from 'react-icons/fa'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { Link } from 'react-router-dom';
+import profilePic from '../../../assets/images/profile/profile-pic-full.png';
 
 type HeroProps = {
   onViewResume: () => void
@@ -168,7 +169,7 @@ const Hero = ({ }: HeroProps) => {
               />
               <div className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-white dark:border-gray-800 shadow-2xl bg-purple-100 dark:bg-purple-900/20 flex items-center justify-center">
                 <img
-                  src="src/assets/images/profile/profile-pic-circle.png"
+                  src={profilePic}
                   alt="Usman Ahmad - Web Developer"
                   className="w-full h-full object-cover"
                 />

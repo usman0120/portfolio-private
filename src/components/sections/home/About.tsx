@@ -4,6 +4,8 @@ import { motion } from 'framer-motion'
 import { FaHandsHelping, FaChartLine, FaStore, FaGraduationCap, FaFileAlt } from 'react-icons/fa'
 import Counter from '../../common/Counter'
 import resumePdf from '../../../assets/resume.pdf';
+import profilePic from '../../../assets/images/profile/profile-pic-full.png';
+
 type AboutProps = {
   onViewResume: () => void
 }
@@ -116,7 +118,7 @@ const About = ({ onViewResume }: AboutProps) => {
               <div className="absolute -inset-2 bg-gradient-to-r from-purple-600 to-blue-600 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-200"></div>
               <div className="relative w-auto h-auto rounded-lg overflow-hidden border-4 border-white dark:border-gray-800 shadow-xl">
                 <img 
-                  src="src/assets/images/profile/profile-pic-full.png" 
+                  src={profilePic} 
                   alt="profile-photo" 
                   className="w-full h-full object-cover"
                 />
