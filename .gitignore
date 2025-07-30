@@ -36,9 +36,6 @@ lerna-debug.log*
 # === NODE MODULES ===
 node_modules/
 
-# === DIST & BUILD OUTPUT ===
-dist/
-dist-ssr/
 
 # === ENVIRONMENT FILES ===
 *.local
