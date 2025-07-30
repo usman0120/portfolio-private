@@ -119,7 +119,7 @@ const About = ({ onViewResume }: AboutProps) => {
               <div className="relative w-auto h-auto rounded-lg overflow-hidden border-4 border-white dark:border-gray-800 shadow-xl">
                 <img 
                   src={profilePic} 
-                  alt="profile-photo" 
+                  alt="profile-pic-full" 
                   className="w-full h-full object-cover"
                 />
               </div>
