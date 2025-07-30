@@ -5,6 +5,8 @@ export default defineConfig({
   plugins: [react()],
   base: '/portfolio-private/', // IMPORTANT: must match your repo name!
   build: {
-    outDir: 'dist'
+    outDir: 'dist',
+    assetsDir: 'assets',  // This organizes your assets better
+    emptyOutDir: true,    // Clears dist folder before each build
   }
 })

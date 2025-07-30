@@ -4,7 +4,7 @@ import { FaArrowDown, FaEye } from 'react-icons/fa'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { Link } from 'react-router-dom';
-import profilePic from '../../../assets/images/profile/profile-pic-full.png';
+import profilePic from '../../../assets/images/profile/profile-pic-circle.png';
 
 type HeroProps = {
   onViewResume: () => void
