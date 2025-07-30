@@ -1,6 +1,9 @@
 {
   "name": "tailwind-starter",
   "version": "1.0.0",
+  "homepage": "https://usman0120.github.io/portfolio-private",
+  "description": "A Tailwind CSS starter project with Vite and React.",
+  "author": "Usman Ahmad",
   "scripts": {
     "build-css": "tailwindcss -i ./src/style.css -o ./dist/style.css --watch",
     "dev": "vite",
