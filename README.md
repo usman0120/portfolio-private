@@ -67,3 +67,4 @@ export default tseslint.config([
   },
 ])
 ```
+© 2025 Usman. All rights reserved.
