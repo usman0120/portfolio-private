@@ -35,9 +35,9 @@ const About = ({ onViewResume }: AboutProps) => {
   ]
 
   const stats = [
-    { value: 2, label: "Years Experience" },
-    { value: 20, label: "Happy Clients" },
-    { value: 50, label: "Projects Completed" }
+    { value: 1, label: "Years Experience" },
+    { value: 5, label: "Happy Clients" },
+    { value: 20, label: "Projects Completed" }
   ]
 
   return (
@@ -127,10 +127,12 @@ const About = ({ onViewResume }: AboutProps) => {
           </div>
 
           <div className="lg:w-2/3">
-            <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed mb-8 relative pl-6 border-l-4 border-purple-600 dark:border-purple-400">
-              I'm a passionate web developer with expertise in creating visually stunning and highly
-              functional digital experiences. My approach combines technical precision with creative
-              problem-solving to deliver solutions that are both beautiful and intuitive.
+            <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed mb-8 relative pl-6 border-l-4 border-purple-600 dark:border-purple-400 text-justify">
+              I’m a passionate and detail-oriented developer with a strong foundation in programming, design, and modern technologies. 
+              My expertise spans across web development, mobile app development, C++ programming, and UI/UX design—allowing me to 
+              create digital solutions that are not only functional but also visually engaging and user-centered. I love transforming
+               ideas into interactive, efficient, and meaningful experiences through clean code, creative design, and problem-solving. 
+               With a balance of technical precision and artistic vision, I aim to build products that blend performance, usability, and innovation.
             </p>
 
             {/* Signature */}

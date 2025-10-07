@@ -6,6 +6,7 @@ import { AnchorLink } from "../../common/AnchorLink";
 import { collection, addDoc } from "firebase/firestore";
 import { db } from "../../../../src/firebase"; // adjust if needed
 import toast from "react-hot-toast";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
@@ -35,25 +36,25 @@ const Footer = () => {
     {
       icon: <FaLinkedinIn className="h-5 w-5" />,
       label: "LinkedIn",
-      url: "https://linkedin.com/in/yourprofile",
+      url: "https://www.linkedin.com/in/usman0120",
       color: "hover:text-[#0A66C2]",
     },
     {
       icon: <SiUpwork className="h-5 w-5" />,
       label: "Upwork",
-      url: "https://upwork.com/freelancers/~yourprofile",
+      url: "https://www.upwork.com/freelancers/~0103bc80cf06b68ebe?mp_source=share",
       color: "hover:text-[#14A800]",
     },
     {
       icon: <FaFonticonsFi className="h-5 w-5" />,
       label: "Fiverr",
-      url: "https://fiverr.com/yourprofile",
+      url: "https://www.fiverr.com/s/wkGWoer",
       color: "hover:text-[#1DBF73]",
     },
     {
       icon: <FaGithub className="h-5 w-5" />,
       label: "GitHub",
-      url: "https://github.com/yourprofile",
+      url: "https://github.com/usman0120",
       color: "hover:text-gray-900 dark:hover:text-white",
     },
   ];
@@ -67,11 +68,11 @@ const Footer = () => {
   ];
 
   const servicesLinks = [
-    { name: "Web Development", url: "#" },
-    { name: "UI/UX Design", url: "#" },
-    { name: "Responsive Design", url: "#" },
-    { name: "E-Commerce", url: "#" },
-    { name: "SEO Optimization", url: "#" },
+    { name: "Web Development", url: "#services" },
+    { name: "UI/UX Design", url: "#services" },
+    { name: "Responsive Design", url: "#services" },
+    { name: "E-Commerce", url: "#services" },
+    { name: "SEO Optimization", url: "#services" },
   ];
 
   return (
@@ -235,16 +236,16 @@ const Footer = () => {
             © {new Date().getFullYear()} Usman Ahmad. All rights reserved.
           </p>
           <div className="flex space-x-6">
-            <a href="/legal/privacy" className="text-gray-400 hover:text-white text-sm transition-colors duration-300">
-              Privacy Policy
-            </a>
-            <a href="/legal/terms" className="text-gray-400 hover:text-white text-sm transition-colors duration-300">
-              Terms of Service
-            </a>
-            <a href="/legal/cookies" className="text-gray-400 hover:text-white text-sm transition-colors duration-300">
-              Cookies
-            </a>
-          </div>
+  <Link to="/legal/privacy" className="text-gray-400 hover:text-white text-sm transition-colors duration-300">
+    Privacy Policy
+  </Link>
+  <Link to="/legal/terms" className="text-gray-400 hover:text-white text-sm transition-colors duration-300">
+    Terms of Service
+  </Link>
+  <Link to="/legal/cookies" className="text-gray-400 hover:text-white text-sm transition-colors duration-300">
+    Cookies
+  </Link>
+</div>
         </motion.div>
       </div>
     </footer>

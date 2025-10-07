@@ -456,8 +456,8 @@ const handleSubmit = async (e: FormEvent) => {
               </div>
               <div className="ml-3">
                 <h4 className="text-gray-700 dark:text-gray-300 font-medium text-sm md:text-base">Working Hours</h4>
-                <p className="text-gray-600 dark:text-gray-400 text-sm md:text-base">Monday - Sunday</p>
-                <p className="text-gray-600 dark:text-gray-400 text-sm md:text-base">9:00 AM - 12:00 PM PST</p>
+                <p className="text-gray-600 dark:text-gray-400 text-sm md:text-base">24/7 Available</p>
+                {/* <p className="text-gray-600 dark:text-gray-400 text-sm md:text-base">9:00 AM - 12:00 PM PST</p> */}
               </div>
             </div>
           </div>
@@ -469,19 +469,19 @@ const handleSubmit = async (e: FormEvent) => {
             </h4>
             <div className="flex space-x-4">
               <a
-                href="#"
+                href="https://www.linkedin.com/in/usman0120"
                 className="text-gray-600 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400"
               >
                 <FontAwesomeIcon icon={faLinkedin} className="text-lg md:text-xl" />
               </a>
               <a
-                href="#"
+                href="https://github.com/usman0120"
                 className="text-gray-600 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400"
               >
                 <FontAwesomeIcon icon={faGithub} className="text-lg md:text-xl" />
               </a>
               <a
-                href="https://fiverr.com/yourprofile"
+                href="https://www.fiverr.com/s/wkGWoer"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400"

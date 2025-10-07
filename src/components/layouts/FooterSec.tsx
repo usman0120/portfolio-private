@@ -9,33 +9,33 @@ const SecondaryFooter = () => {
     {
       icon: <FaLinkedinIn className="h-5 w-5" />,
       label: "LinkedIn",
-      url: "https://linkedin.com/in/yourprofile",
+      url: "https://www.linkedin.com/in/usman0120",
       color: "hover:text-[#0A66C2]"
     },
     {
       icon: <SiUpwork className="h-5 w-5" />,
       label: "Upwork",
-      url: "https://upwork.com/freelancers/~yourprofile",
+      url: "https://www.upwork.com/freelancers/~0103bc80cf06b68ebe?mp_source=share",
       color: "hover:text-[#14A800]"
     },
     {
       icon: <SiFiverr className="h-5 w-5" />,
       label: "Fiverr",
-      url: "https://fiverr.com/yourprofile",
+      url: "https://www.fiverr.com/s/wkGWoer",
       color: "hover:text-[#1DBF73]"
     },
     {
       icon: <FaGithub className="h-5 w-5" />,
       label: "GitHub",
-      url: "https://github.com/yourprofile",
+      url: "https://github.com/usman0120",
       color: "hover:text-gray-900 dark:hover:text-white"
     },
   ];
 
   const usefulLinks = [
     { name: "Latest Projects", path: "/projects", desc: "See my recent work" },
-    { name: "Tech Stack", path: "/hire-me#skills", desc: "Technologies I use" },
-    { name: "Client Testimonials", path: "/hire-me#testimonials", desc: "What clients say" },
+    { name: "Tech Stack", path: "/#Skills", desc: "Technologies I use" },
+    { name: "Contact Me", path: "/#Contact", desc: "Get in touch" },
   ];
 
   const workInfo = [
