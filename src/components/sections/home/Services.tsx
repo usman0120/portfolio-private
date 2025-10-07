@@ -124,7 +124,7 @@ const Services = () => {
                     className="inline-block px-4 py-1 bg-purple-50 dark:bg-purple-900/20 text-purple-600 dark:text-purple-300 rounded-full text-sm font-medium transition-all duration-300 group-hover:bg-purple-600 group-hover:text-white"
                   >
                     <span className="flex items-center">
-                      Learn more <FaArrowRight className="ml-2 transition-transform duration-300 group-hover:translate-x-1" />
+                      See more <FaArrowRight className="ml-2 transition-transform duration-300 group-hover:translate-x-1" />
                     </span>
                   </Link>
                 </div>
