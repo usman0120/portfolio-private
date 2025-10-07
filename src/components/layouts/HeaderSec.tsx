@@ -32,7 +32,7 @@ const SecondaryHeader = () => {
               transition={{ type: 'spring', stiffness: 400 }}
             >
               <div className="w-8 h-8 lg:w-10 lg:h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center shadow-md">
-                <span className="text-white font-bold text-lg">US</span>
+                <span className="text-white font-bold text-lg">UA</span>
               </div>
               <span className="font-bold pl-2 text-lg lg:text-xl">USMAN AHMAD</span>
             </motion.div>

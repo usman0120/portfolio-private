@@ -7,6 +7,9 @@ import SecondaryFooter from '../../components/layouts/FooterSec';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFonticonsFi, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import LoadingLine from '../../components/common/LoadingLine'
+import { db } from "../../../src/firebase";
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore'
+import toast from "react-hot-toast";
 
 type FormData = {
   name: string;
@@ -69,50 +72,42 @@ const HireMePage=() =>{
     setFiles(newFiles);
   };
 
-  const handleSubmit = async (e: FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+const handleSubmit = async (e: FormEvent) => {
+  e.preventDefault();
+  setIsSubmitting(true);
 
-    try {
-      // Prepare form data for submission
-      const submissionData = new FormData();
-      Object.entries(formData).forEach(([key, value]) => {
-        if (value !== undefined) {
-          submissionData.append(key, value.toString());
-        }
-      });
-      files.forEach(file => {
-        submissionData.append('files', file.file);
-      });
+  try {
+    // Add form data to Firestore
+    await addDoc(collection(db, "contactMessages"), {
+      ...formData,
+      files: files.map(f => f.file.name), // optional: only save filenames
+      createdAt: serverTimestamp()
+    });
 
-      // Here you would typically make an API call
-      console.log('Form data:', Object.fromEntries(submissionData.entries()));
-      
-      // Simulate API delay
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      
-      setShowSuccess(true);
-      setFormData({
-        name: '',
-        email: '',
-        company: '',
-        project_type: '',
-        budget: '',
-        timeline: '',
-        description: '',
-        nda: false,
-        terms: false,
-      });
-      setFiles([]);
-      if (fileInputRef.current) {
-        fileInputRef.current.value = '';
-      }
-    } catch (error) {
-      console.error('Submission error:', error);
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+    toast.success("Message sent successfully!");
+
+    setShowSuccess(true);
+    setFormData({
+      name: '',
+      email: '',
+      company: '',
+      project_type: '',
+      budget: '',
+      timeline: '',
+      description: '',
+      nda: false,
+      terms: false,
+    });
+    setFiles([]);
+    if (fileInputRef.current) fileInputRef.current.value = '';
+  } catch (error) {
+    console.error("Error submitting form:", error);
+    toast.error("Something went wrong. Please try again.");
+  } finally {
+    setIsSubmitting(false);
+  }
+};
+
 
   return (
     <div className="font-sans bg-gray-50 dark:bg-gray-900 transition-colors duration-300 min-h-screen flex flex-col">

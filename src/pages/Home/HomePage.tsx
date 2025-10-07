@@ -11,11 +11,13 @@ import Footer from '../../components/sections/home/Footer';
 import BackToTop from '../../components/common/BackToTop';
 import ResumeModal from '../../components/ui/modals/ResumeModal';
 import LoadingLine from '../../components/common/LoadingLine'
+import { Toaster } from "react-hot-toast";
 const Home = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <div className="font-sans">
+      <Toaster position="top-right" />
       <Header />
       <LoadingLine />
       <main className='bg-gray-100 dark:bg-gray-900'>

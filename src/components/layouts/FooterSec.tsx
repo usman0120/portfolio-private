@@ -42,7 +42,7 @@ const SecondaryFooter = () => {
     {
       icon: <FaRegClock className="h-4 w-4" />,
       title: "Working Hours",
-      text: "Mon-Fri: 9AM - 6PM (GMT)"
+      text: "24/7 Available for projects"
     },
     {
       icon: <FaRegMap className="h-4 w-4" />,
@@ -59,7 +59,7 @@ const SecondaryFooter = () => {
           <div>
             <div className="flex items-center space-x-2 mb-4">
               <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center shadow-md">
-                <span className="text-white font-bold text-lg">US</span>
+                <span className="text-white font-bold text-lg">UA</span>
               </div>
               <span className="font-bold text-xl text-white">Usman Ahmad</span>
             </div>

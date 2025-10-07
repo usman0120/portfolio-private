@@ -3,6 +3,10 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { useState } from 'react'
 import { FaCheckCircle, FaTimes } from 'react-icons/fa'
 
+// ✅ Add these new imports:
+import { db } from '../../../../src/firebase'
+import { collection, addDoc, Timestamp } from 'firebase/firestore'
+
 const Contact = () => {
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -26,13 +30,21 @@ const Contact = () => {
     }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    console.log('Form submitted:', formData)
-    
+  const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault()
+
+  try {
+    // ✅ Add form data to Firestore collection "contacts"
+    await addDoc(collection(db, 'contacts'), {
+      ...formData,
+      createdAt: Timestamp.now(),
+    })
+
+    console.log('✅ Message stored in Firebase:', formData)
+
     // Show success message
     setShowSuccess(true)
-    
+
     // Reset form
     setFormData({
       name: '',
@@ -45,7 +57,12 @@ const Contact = () => {
     setTimeout(() => {
       setShowSuccess(false)
     }, 4000)
+  } catch (error) {
+    console.error('❌ Error sending message:', error)
+    alert('Something went wrong. Please try again later.')
   }
+}
+
 
   return (
     <section 

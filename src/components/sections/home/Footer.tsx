@@ -1,34 +1,60 @@
-// src/components/sections/Footer.tsx
-import { motion } from 'framer-motion';
-import { FaLinkedinIn, FaGithub, FaFonticonsFi } from 'react-icons/fa';
-import { SiUpwork } from 'react-icons/si';
-import { AnchorLink } from '../../common/AnchorLink';
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { FaLinkedinIn, FaGithub, FaFonticonsFi } from "react-icons/fa";
+import { SiUpwork } from "react-icons/si";
+import { AnchorLink } from "../../common/AnchorLink";
+import { collection, addDoc } from "firebase/firestore";
+import { db } from "../../../../src/firebase"; // adjust if needed
+import toast from "react-hot-toast";
 
 const Footer = () => {
+  const [email, setEmail] = useState("");
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!email.trim()) {
+      toast.error("Please enter your email.");
+      return;
+    }
+
+    try {
+      await addDoc(collection(db, "newsletter"), {
+        email,
+        timestamp: new Date(),
+      });
+      toast.success("Subscribed successfully!");
+      setEmail("");
+    } catch (error) {
+      console.error("Error adding email:", error);
+      toast.error("Failed to subscribe. Try again later.");
+    }
+  };
+
   const socialLinks = [
     {
       icon: <FaLinkedinIn className="h-5 w-5" />,
       label: "LinkedIn",
       url: "https://linkedin.com/in/yourprofile",
-      color: "hover:text-[#0A66C2]"
+      color: "hover:text-[#0A66C2]",
     },
     {
       icon: <SiUpwork className="h-5 w-5" />,
       label: "Upwork",
       url: "https://upwork.com/freelancers/~yourprofile",
-      color: "hover:text-[#14A800]"
+      color: "hover:text-[#14A800]",
     },
     {
       icon: <FaFonticonsFi className="h-5 w-5" />,
       label: "Fiverr",
       url: "https://fiverr.com/yourprofile",
-      color: "hover:text-[#1DBF73]"
+      color: "hover:text-[#1DBF73]",
     },
     {
       icon: <FaGithub className="h-5 w-5" />,
       label: "GitHub",
       url: "https://github.com/yourprofile",
-      color: "hover:text-gray-900 dark:hover:text-white"
+      color: "hover:text-gray-900 dark:hover:text-white",
     },
   ];
 
@@ -37,7 +63,7 @@ const Footer = () => {
     { name: "About", url: "#about" },
     { name: "Services", url: "#services" },
     { name: "Portfolio", url: "#portfolio" },
-    { name: "Contact", url: "#contact" }
+    { name: "Contact", url: "#contact" },
   ];
 
   const servicesLinks = [
@@ -45,7 +71,7 @@ const Footer = () => {
     { name: "UI/UX Design", url: "#" },
     { name: "Responsive Design", url: "#" },
     { name: "E-Commerce", url: "#" },
-    { name: "SEO Optimization", url: "#" }
+    { name: "SEO Optimization", url: "#" },
   ];
 
   return (
@@ -56,12 +82,12 @@ const Footer = () => {
         animate={{
           scale: [1, 1.1, 1],
           x: [-20, 20, -20],
-          y: [0, 20, 0]
+          y: [0, 20, 0],
         }}
         transition={{
           duration: 10,
           repeat: Infinity,
-          ease: "easeInOut"
+          ease: "easeInOut",
         }}
       />
       <motion.div
@@ -69,13 +95,13 @@ const Footer = () => {
         animate={{
           scale: [1, 1.1, 1],
           x: [20, -20, 20],
-          y: [0, 20, 0]
+          y: [0, 20, 0],
         }}
         transition={{
           duration: 12,
           repeat: Infinity,
           ease: "easeInOut",
-          delay: 2
+          delay: 2,
         }}
       />
 
@@ -87,7 +113,7 @@ const Footer = () => {
           viewport={{ once: true }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12"
         >
-          {/* About Column */}
+          {/* About */}
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -96,7 +122,7 @@ const Footer = () => {
           >
             <div className="flex items-center space-x-2 mb-4">
               <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center shadow-md">
-                <span className="text-white font-bold text-lg">U</span>
+                <span className="text-white font-bold text-lg">UA</span>
               </div>
               <span className="font-bold text-xl text-white">Usman Ahmad</span>
             </div>
@@ -134,7 +160,7 @@ const Footer = () => {
                 <motion.li
                   key={index}
                   whileHover={{ x: 5 }}
-                  transition={{ type: 'spring', stiffness: 300 }}
+                  transition={{ type: "spring", stiffness: 300 }}
                 >
                   <AnchorLink to={link.url} className="text-gray-400 hover:text-white transition-colors duration-300">
                     {link.name}
@@ -157,7 +183,7 @@ const Footer = () => {
                 <motion.li
                   key={index}
                   whileHover={{ x: 5 }}
-                  transition={{ type: 'spring', stiffness: 300 }}
+                  transition={{ type: "spring", stiffness: 300 }}
                 >
                   <AnchorLink to={link.url} className="text-gray-400 hover:text-white transition-colors duration-300">
                     {link.name}
@@ -176,10 +202,12 @@ const Footer = () => {
           >
             <h3 className="text-lg font-semibold text-white mb-4">Newsletter</h3>
             <p className="text-gray-400 mb-4">Subscribe to get updates on new projects.</p>
-            <form className="flex">
+            <form onSubmit={handleSubscribe} className="flex">
               <input
                 type="email"
                 placeholder="Your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 className="px-4 py-3 rounded-l-xl bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 w-full"
               />
               <button
@@ -213,7 +241,6 @@ const Footer = () => {
             <a href="/legal/terms" className="text-gray-400 hover:text-white text-sm transition-colors duration-300">
               Terms of Service
             </a>
-
             <a href="/legal/cookies" className="text-gray-400 hover:text-white text-sm transition-colors duration-300">
               Cookies
             </a>
@@ -225,4 +252,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
