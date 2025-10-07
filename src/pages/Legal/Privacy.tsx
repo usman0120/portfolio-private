@@ -4,7 +4,7 @@ import { LegalSection } from '../../components/sections/shared/LegalSection';
 
 const Privacy = () => {
   return (
-    <LegalSection title="Privacy Policy" lastUpdated="June 15, 2023">
+    <LegalSection title="Privacy Policy" lastUpdated="June 15, 2025">
       <LoadingLine />
       <div className="space-y-8">
         <section className="border-b border-gray-200 dark:border-gray-700 pb-8">

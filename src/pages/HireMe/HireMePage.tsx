@@ -356,7 +356,6 @@ const handleSubmit = async (e: FormEvent) => {
               <Link
                 to="/legal/terms"
                 className="text-purple-600 hover:underline"
-                target="_blank"
                 rel="noopener noreferrer"
               >
                 Terms of Service
@@ -365,13 +364,13 @@ const handleSubmit = async (e: FormEvent) => {
               <Link
                 to="/legal/privacy"
                 className="text-purple-600 hover:underline"
-                target="_blank"
                 rel="noopener noreferrer"
               >
                 Privacy Policy *
               </Link>
             </label>
           </div>
+
 
           {/* Form Actions */}
           <div className="flex justify-end">
