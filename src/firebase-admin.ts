@@ -1,4 +1,3 @@
-// src/firebase.ts
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
@@ -15,7 +14,15 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+
+// Initialize Firebase services
 export const db = getFirestore(app);
 export const auth = getAuth(app);
 export const storage = getStorage(app);
 
+// Admin email for simple authentication (you can add multiple)
+// export const ADMIN_EMAILS = ['usmanahmad.workmail@gmail.com']; // Add your email here
+
+export const ADMIN_CONFIG = {
+  allowedEmails: ['usmanahmad.workmail@gmail.com'], // Add your email
+};

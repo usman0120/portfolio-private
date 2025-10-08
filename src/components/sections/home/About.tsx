@@ -142,6 +142,9 @@ const About = ({ onViewResume }: AboutProps) => {
           </div>
         </motion.div>
 
+
+
+
         {/* I Help section */}
         <motion.div 
           className="mb-16"

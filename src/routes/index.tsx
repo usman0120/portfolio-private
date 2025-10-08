@@ -10,11 +10,14 @@ import Cookies from '../pages/Legal/Cookies';
 import NotFound from '../pages/NotFound';
 import ServiceDetail from '../pages/ServiceDetail';
 
+import { adminRoutes } from './admin-routes';
+
 export const routes: RouteObject[] = [
   {
     path: '/',
     element: <Home />,
   },
+  ...adminRoutes,
   {
     path: '/projects',
     element: <Projects />,
@@ -52,6 +55,3 @@ export const routes: RouteObject[] = [
     element: <NotFound />,
   },
 ];
-
-
-// http://192.168.100.27:5173

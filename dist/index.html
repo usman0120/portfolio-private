@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8"/>
   <title>USMAN AHMAD | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio of Usman Ahmad - Web Developer and Designer">
+  
   <!-- Favicon links - Placeholder initials logo (UA) -->
   <link rel="icon" href="https://ui-avatars.com/api/?name=Usman+Ahmad&background=0D8ABC&color=fff&size=32" type="image/png">
   <link rel="icon" href="https://ui-avatars.com/api/?name=UA&background=0D8ABC&color=fff&size=16" type="image/png" sizes="16x16">
@@ -14,15 +17,91 @@
   
   <!-- Keep both CSS links -->
   <link href="dist/style.css" rel="stylesheet"/>
-  <script type="module" crossorigin src="/portfolio-private/assets/index-Bw5X88Ai.js"></script>
-  <link rel="stylesheet" crossorigin href="/portfolio-private/assets/index-DRPi97kh.css">
+  
+  <!-- Preload critical resources -->
+  <link rel="preload" href="data:application/octet-stream;base64,Ly8gbWFpbi50c3gNCmltcG9ydCBSZWFjdCBmcm9tICdyZWFjdCc7DQppbXBvcnQgUmVhY3RET00gZnJvbSAncmVhY3QtZG9tL2NsaWVudCc7DQppbXBvcnQgJy4vaW5kZXguY3NzJzsNCmltcG9ydCBBcHAgZnJvbSAnLi9BcHAnOw0KaW1wb3J0IHsgQnJvd3NlclJvdXRlciB9IGZyb20gJ3JlYWN0LXJvdXRlci1kb20nOw0KaW1wb3J0IEFPUyBmcm9tICdhb3MnOw0KaW1wb3J0ICdhb3MvZGlzdC9hb3MuY3NzJzsNCmltcG9ydCAnQGZvcnRhd2Vzb21lL2ZvbnRhd2Vzb21lLWZyZWUvY3NzL2FsbC5taW4uY3NzJzsNCg0KUmVhY3RET00uY3JlYXRlUm9vdChkb2N1bWVudC5nZXRFbGVtZW50QnlJZCgncm9vdCcpISkucmVuZGVyKA0KICA8UmVhY3QuU3RyaWN0TW9kZT4NCiAgICA8QnJvd3NlclJvdXRlcj4NCiAgICAgIDxBcHAgLz4NCiAgICA8L0Jyb3dzZXJSb3V0ZXI+DQogIDwvUmVhY3QuU3RyaWN0TW9kZT4NCik7DQoNCi8vIEluaXRpYWxpemUgQU9TDQpBT1MuaW5pdCh7DQogIGR1cmF0aW9uOiA4MDAsDQogIG9uY2U6IHRydWUNCn0pOw==" as="script">
+  
+  <style>
+    /* Critical CSS for initial loading state */
+    .loading-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      padding: 2rem;
+      text-align: center;
+    }
+    
+    .loading-title {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      background: linear-gradient(to right, #ec4899, #ef4444, #f59e0b);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 1.5rem;
+    }
+    
+    .loading-subtitle {
+      font-size: 1.125rem;
+      color: #6b7280;
+      max-width: 500px;
+      margin-bottom: 2rem;
+    }
+    
+    .loading-spinner {
+      width: 50px;
+      height: 50px;
+      border: 4px solid rgba(13, 138, 188, 0.2);
+      border-left: 4px solid #0D8ABC;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    /* Responsive improvements */
+    @media (max-width: 768px) {
+      .loading-container {
+        padding: 1rem;
+      }
+      
+      .loading-title {
+        margin-bottom: 1rem;
+      }
+      
+      .loading-subtitle {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .loading-spinner {
+        width: 40px;
+        height: 40px;
+      }
+    }
+  </style>
+  <script type="module" crossorigin src="./assets/index-DfT7Y16f.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-DvHPvFWQ.css">
 </head>
 <body>
   <div id="root">
-    <!-- Fallback content that shows if React fails to load -->
-    <div class="bg-gray-100 flex items-center justify-center min-h-screen">
-      <h1 class="text-6xl font-bold bg-gradient-to-br from-pink-500 via-red-500 to-yellow-500 bg-clip-text text-purple-600">Loading Please wait...</h1>
+    <!-- Enhanced loading state with better UX -->
+    <div class="loading-container">
+      <h1 class="loading-title">USMAN AHMAD</h1>
+      <p class="loading-subtitle">Web Developer & Designer | Creating digital experiences that make a difference</p>
+      <div class="loading-spinner"></div>
+      <p class="loading-subtitle" style="margin-top: 1.5rem; font-size: 0.875rem;">Loading portfolio, please wait...</p>
     </div>
-  </div>
+  </div>
+  
+  <!-- Scripts remain exactly the same -->
 </body>
 </html>
