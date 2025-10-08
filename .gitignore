@@ -49,6 +49,3 @@ coverage/
 # === OUTPUT FILES (OPTIONAL) ===
 *.out
 *.pid
-
-# === GIT FILES ===
-.git/
